@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+  Curioso o suficiente para abrir o código-fonte?
+  Este kit avalia um protótipo acadêmico.
+  A versão comercial, em produção, está em https://strataflow.co
+-->
+<title>Kit de Avaliação · Framework GTM Adaptativo</title>
+<meta name="description" content="Kit de avaliação por especialistas do Framework GTM Adaptativo, pesquisa de mestrado do PPGI/Uninove.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/kit.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Framework GTM Adaptativo <span class="label">Kit de avaliação</span></a>
+    <nav class="topnav" aria-label="Navegação principal">
+      <a class="hide-sm" href="#arquitetura">Arquitetura</a>
+      <a class="hide-sm" href="#materiais">Materiais</a>
+      <a class="hide-sm" href="#participar">Como participar</a>
+      <a href="especificacao.html">Especificação</a>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder<span class="long"> questionário</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow label"><span class="dot" aria-hidden="true"></span>Avaliação por especialistas · versão preliminar</span>
+        <h1>Framework GTM Adaptativo</h1>
+        <p class="lead">Materiais para avaliar um framework que integra Inteligência Competitiva baseada em dados, Inteligência Artificial e as funções de Marketing, Vendas, Pós-Vendas e Produto na formulação e execução de estratégias de Go-to-Market (GTM) em empresas de tecnologia.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#participar">Começar a avaliação</a>
+          <a class="btn btn-secondary" href="especificacao.html">Ler a Especificação</a>
+          <a class="btn btn-ghost" href="https://gtm-framework.vercel.app/login" target="_blank" rel="noopener">Abrir o protótipo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="credits">
+          <div><span class="label">Autor</span><strong>Guilherme de Toledo Costa</strong></div>
+          <div><span class="label">Orientador</span><strong>Prof. Dr. Marcos Antonio Gaspar</strong></div>
+          <div><span class="label">Programa</span><strong>PPGI · Uninove</strong></div>
+        </div>
+      </div>
+
+      <aside class="card ficha" aria-labelledby="ficha-titulo">
+        <h2 id="ficha-titulo">Ficha da avaliação</h2>
+        <dl>
+          <div class="row"><dt class="label">Objeto</dt><dd>Protótipo navegável do framework<small>Prova de conceito com dados sintéticos</small></dd></div>
+          <div class="row"><dt class="label">Método</dt><dd>Design Science Research<small>Etapas de demonstração e avaliação</small></dd></div>
+          <div class="row"><dt class="label">Critérios</dt><dd class="tnum">8 critérios de qualidade de artefato<small>Utilidade, completude, consistência interna, integração interfuncional, adaptabilidade, redução de incerteza, facilidade de compreensão e generalidade</small></dd></div>
+          <div class="row"><dt class="label">Instrumento</dt><dd class="tnum">16 afirmativas em escala Likert de 5 pontos<small>Mais questões abertas e de síntese</small></dd></div>
+          <div class="row"><dt class="label">Duração</dt><dd class="tnum">35 a 45 minutos<small>Leitura, navegação e questionário</small></dd></div>
+          <div class="row"><dt class="label">Participação</dt><dd>Voluntária e anônima<small>Uso exclusivamente acadêmico</small></dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="wrap" style="margin-top: 32px;">
+      <div class="notice" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p><strong>Escopo da avaliação.</strong> Você vai avaliar a clareza, a coerência interna, a utilidade potencial e a adaptabilidade do artefato a partir da Especificação e do protótipo. A avaliação não envolve a implantação do framework em uma organização nem a comprovação de seus efeitos sobre resultados de GTM. Empresa, contas, pessoas e números exibidos no protótipo são fictícios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visao-geral">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Visão geral</span>
+        <h2>O modelo teórico do framework</h2>
+        <p>A Inteligência Artificial atua sobre um ciclo entre conhecimento, decisão e execução, alimentado pela Inteligência Competitiva e pelas estratégias de GTM. A execução se conecta às quatro funções que o framework integra.</p>
+      </div>
+      <div class="card" style="padding: 16px;">
+<figure class="model" aria-labelledby="model-cap">
+  <div class="model-svg">
+    <svg viewBox="0 0 1100 520" role="img" aria-label="Modelo teórico conceitual do Framework GTM Adaptativo: Inteligência Artificial sobre um ciclo entre Conhecimentos e Dados, Decisão Adaptativa e Execução Estratégica, alimentado por Inteligência Competitiva e Estratégias de GTM, e conectado à Integração Interfuncional entre Marketing, Comercial, Pós-Vendas e Produto.">
+      <defs>
+        <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".9" fill="#E4E4E7"/></pattern>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#18181B"/></marker>
+        <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"><circle cx="5" cy="5" r="4" fill="#18181B"/></marker>
+      </defs>
+      <rect x="6" y="6" width="1088" height="508" rx="10" fill="#FFFFFF" stroke="#E4E4E7"/>
+      <rect x="20" y="20" width="806" height="480" rx="8" fill="url(#dots)" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+
+      <!-- Inteligência Artificial -->
+      <rect x="168" y="38" width="520" height="66" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.4"/>
+      <text x="428" y="66" text-anchor="middle" class="t-title">Inteligência Artificial</text>
+      <text x="428" y="88" text-anchor="middle" class="t-desc">Automação e análise preditiva para antecipar tendências e otimizar processos</text>
+
+      <rect x="36" y="122" width="774" height="362" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+
+      <!-- grupo esquerdo -->
+      <rect x="54" y="152" width="216" height="304" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+      <rect x="70" y="168" width="184" height="128" rx="8" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.4"/>
+      <text x="162" y="198" text-anchor="middle" class="t-title">Inteligência</text>
+      <text x="162" y="219" text-anchor="middle" class="t-title">Competitiva</text>
+      <text x="162" y="244" text-anchor="middle" class="t-desc">Coleta e análise rigorosa</text>
+      <text x="162" y="261" text-anchor="middle" class="t-desc">de informações de mercado</text>
+      <text x="162" y="278" text-anchor="middle" class="t-desc">para embasar decisões</text>
+      <rect x="70" y="312" width="184" height="128" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="162" y="346" text-anchor="middle" class="t-title">Estratégias de GTM</text>
+      <text x="162" y="372" text-anchor="middle" class="t-desc">Plano de ação para a</text>
+      <text x="162" y="389" text-anchor="middle" class="t-desc">execução e ajuste constante</text>
+      <text x="162" y="406" text-anchor="middle" class="t-desc">de presença de mercado</text>
+
+      <!-- ciclo -->
+      <rect x="326" y="258" width="232" height="86" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.6"/>
+      <text x="442" y="290" text-anchor="middle" class="t-title">Conhecimentos &amp; Dados</text>
+      <text x="442" y="312" text-anchor="middle" class="t-desc">Ponto de partida que alimenta</text>
+      <text x="442" y="329" text-anchor="middle" class="t-desc">o ciclo com informações acionáveis</text>
+
+      <rect x="592" y="140" width="202" height="98" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="693" y="170" text-anchor="middle" class="t-title">Decisão Adaptativa</text>
+      <text x="693" y="194" text-anchor="middle" class="t-desc">Ajuste rápido de rota com</text>
+      <text x="693" y="211" text-anchor="middle" class="t-desc">base em resultados e</text>
+      <text x="693" y="228" text-anchor="middle" class="t-desc">novos dados</text>
+
+      <rect x="592" y="368" width="202" height="98" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="693" y="398" text-anchor="middle" class="t-title">Execução Estratégica</text>
+      <text x="693" y="422" text-anchor="middle" class="t-desc">Implementação tática das</text>
+      <text x="693" y="439" text-anchor="middle" class="t-desc">estratégias baseadas nos</text>
+      <text x="693" y="456" text-anchor="middle" class="t-desc">dados coletados</text>
+
+      <path d="M272 300 H322" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#ah)" marker-end="url(#ah)"/>
+      <path d="M408 254 C 420 180, 500 162, 588 178" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+      <path d="M740 244 C 772 290, 772 318, 742 362" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+      <path d="M588 440 C 500 470, 420 440, 410 348" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+
+      <!-- título e integração -->
+      <text x="962" y="48" text-anchor="middle" class="t-brand-s">FRAMEWORK</text>
+      <text x="962" y="88" text-anchor="middle" class="t-brand">GTM</text>
+      <text x="962" y="112" text-anchor="middle" class="t-brand-s">ADAPTATIVO</text>
+      <rect x="846" y="122" width="232" height="378" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+      <text x="962" y="154" text-anchor="middle" class="t-title">Integração Interfuncional</text>
+      <text x="962" y="176" text-anchor="middle" class="t-desc">Sinergia entre áreas e</text>
+      <text x="962" y="193" text-anchor="middle" class="t-desc">quebra de silos</text>
+      <g class="fn">
+        <rect x="866" y="212" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="246" text-anchor="middle" class="t-title">Marketing</text>
+        <rect x="866" y="282" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="316" text-anchor="middle" class="t-title">Comercial</text>
+        <rect x="866" y="352" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="386" text-anchor="middle" class="t-title">Pós-Vendas</text>
+        <rect x="866" y="422" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="456" text-anchor="middle" class="t-title">Produto</text>
+      </g>
+      <path d="M798 432 H830 V300 H842" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#ah)" marker-end="url(#ah)"/>
+    </svg>
+  </div>
+
+  <div class="model-stack" >
+    <div class="m-box m-ia"><strong>Inteligência Artificial</strong><span>Automação e análise preditiva para antecipar tendências e otimizar processos</span></div>
+    <div class="m-group">
+      <div class="m-box m-ic"><strong>Inteligência Competitiva</strong><span>Coleta e análise rigorosa de informações de mercado para embasar decisões</span></div>
+      <div class="m-box"><strong>Estratégias de GTM</strong><span>Plano de ação para a execução e ajuste constante de presença de mercado</span></div>
+    </div>
+    <div class="m-arrow">↕</div>
+    <div class="m-cycle">
+      <span class="label">Ciclo adaptativo</span>
+      <div class="m-box m-core"><strong>Conhecimentos &amp; Dados</strong><span>Ponto de partida que alimenta o ciclo com informações acionáveis</span></div>
+      <div class="m-arrow">↓</div>
+      <div class="m-box"><strong>Decisão Adaptativa</strong><span>Ajuste rápido de rota com base em resultados e novos dados</span></div>
+      <div class="m-arrow">↓</div>
+      <div class="m-box"><strong>Execução Estratégica</strong><span>Implementação tática das estratégias baseadas nos dados coletados</span></div>
+      <div class="m-arrow">↺ retorna a Conhecimentos &amp; Dados</div>
+    </div>
+    <div class="m-arrow">↕</div>
+    <div class="m-group">
+      <span class="label">Integração Interfuncional</span>
+      <div class="m-fns"><span>Marketing</span><span>Comercial</span><span>Pós-Vendas</span><span>Produto</span></div>
+    </div>
+  </div>
+  <figcaption id="model-cap">Modelo teórico conceitual do Framework GTM Adaptativo (Figura 2 da dissertação). Fonte: elaborado pelo autor.</figcaption>
+</figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="arquitetura">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Arquitetura</span>
+        <h2>Arquitetura em seis camadas</h2>
+        <p>Cada camada recebe insumos da anterior e entrega resultados à seguinte. A Camada 6 devolve o aprendizado à Camada 1 e um novo ciclo começa. Selecione uma camada para ver onde ela aparece no protótipo.</p>
+      </div>
+
+      <div class="arch">
+        <div class="stack" id="layer-stack" role="tablist" aria-label="Camadas do framework" aria-orientation="vertical">
+          <div class="loop" aria-hidden="true">
+            <svg viewBox="0 0 30 100" preserveAspectRatio="none">
+              <path d="M2 99 H22 V1 H2" fill="none" stroke="#A1A1AA" stroke-width="1.2" vector-effect="non-scaling-stroke" stroke-dasharray="4 4"/>
+            </svg>
+            <span class="loop-label">Retroalimentação 6 → 1</span>
+          </div>
+        </div>
+
+        <article class="card detail" id="layer-detail" role="tabpanel" aria-live="polite">
+          <div class="top">
+            <span class="label" data-f="label">Camada 1 de 6</span>
+            <span class="cap cap-sensing" data-f="cap">Sensing</span>
+          </div>
+          <h3 data-f="name">Coleção de Dados e Governança</h3>
+          <p class="desc" data-f="desc"></p>
+          <dl>
+            <div class="row"><dt class="label">Na instanciação</dt><dd data-f="inst"></dd></div>
+            <div class="row"><dt class="label">No protótipo</dt><dd><span data-f="module"></span><div class="screens" data-f="screens"></div></dd></div>
+            <div class="row"><dt class="label">Endereço da tela</dt><dd><a class="route" data-f="route" href="https://gtm-framework.vercel.app/poc" target="_blank" rel="noopener"></a></dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="caps-legend">
+        <div>
+          <span class="cap cap-sensing">Sensing</span>
+          <span class="layers">Camadas 1 e 2</span>
+          <p>Detectar oportunidades e ameaças no ambiente competitivo, a partir de dados internos e sinais de mercado.</p>
+        </div>
+        <div>
+          <span class="cap cap-seizing">Seizing</span>
+          <span class="layers">Camadas 3 e 4</span>
+          <p>Mobilizar recursos analíticos para decidir e agir sobre o que foi detectado.</p>
+        </div>
+        <div>
+          <span class="cap cap-reconf">Reconfiguring</span>
+          <span class="layers">Camadas 5 e 6</span>
+          <p>Ajustar estruturas, processos e prioridades com base nos resultados e no aprendizado.</p>
+        </div>
+      </div>
+      <p style="margin-top: 12px; font-size: 13px; color: var(--fg-3);">Capacidades dinâmicas segundo Teece (2007; 2018). Na instanciação, as seis camadas são operadas em cinco: Decisão e Execução Interfuncional compartilham o mesmo painel e os mesmos indicadores.</p>
+    </div>
+  </section>
+
+  <section class="section" id="dimensoes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Dimensões transversais</span>
+        <h2>Onde cada dimensão atua</h2>
+        <p>Cinco dimensões atravessam as camadas e garantem coerência entre o que o framework propõe e o que o protótipo executa.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:left;">Dimensão</th>
+              <th scope="col">C1<span>Dados</span></th>
+              <th scope="col">C2<span>IC</span></th>
+              <th scope="col">C3<span>IA</span></th>
+              <th scope="col">C4<span>Decisão</span></th>
+              <th scope="col">C5<span>Execução</span></th>
+              <th scope="col">C6<span>Aprendizado</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Governança de dados<small>Glossário comum, qualidade e rastreabilidade</small></th>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Integração interfuncional<small>KPIs e decisões compartilhados entre as quatro funções</small></th>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Orientação por dados<small>Decisões com critérios, evidências e recomendações registrados</small></th>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Adaptabilidade<small>Ajuste a contextos, setores e maturidades de dados</small></th>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Aprendizado contínuo<small>Revisão de hipóteses e realimentação do ciclo</small></th>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matrix-legend">
+        <span><span class="cell main"></span>Aplicação principal</span>
+        <span><span class="cell trans"></span>Atuação transversal</span>
+        <span><span class="cell none"></span>Sem atuação direta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="materiais">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Materiais</span>
+        <h2>O que compõe o kit</h2>
+        <p>A Especificação descreve o framework, o protótipo permite percorrê-lo e o questionário registra a sua avaliação.</p>
+      </div>
+      <div class="materials">
+        <article class="card material">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <span class="label">Leitura</span>
+          <h3>Especificação do framework</h3>
+          <p>Arquitetura, correspondência com o protótipo, papéis, dimensões, fluxo de operação, registros e um exemplo que percorre o ciclo completo.</p>
+          <a class="btn btn-secondary" href="especificacao.html">Ler a Especificação</a>
+        </article>
+
+        <article class="card material featured">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+          <span class="label">Objeto da avaliação</span>
+          <h3>Protótipo navegável</h3>
+          <p>Dashboard que materializa as camadas do framework com um caso de uso do setor agro.</p>
+          <div class="creds">
+            <div class="cred">
+              <div><span class="label">Usuário</span><code id="cred-user">g.toledocosta@uni9.edu.br</code></div>
+              <button class="copy" type="button" data-copy="cred-user">Copiar</button>
+            </div>
+            <div class="cred">
+              <div><span class="label">Senha</span><code id="cred-pass">mestrado2026</code></div>
+              <button class="copy" type="button" data-copy="cred-pass">Copiar</button>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="https://gtm-framework.vercel.app/login" target="_blank" rel="noopener">Abrir o protótipo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </article>
+
+        <article class="card material">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+          <span class="label">Registro</span>
+          <h3>Questionário de avaliação</h3>
+          <p>Perfil do avaliador, 16 afirmativas em escala Likert, questões abertas e duas questões de síntese. O consentimento é registrado no início.</p>
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder questionário</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="participar">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Como participar</span>
+        <h2>Três etapas, nesta ordem</h2>
+        <p>O questionário pressupõe que você já leu a Especificação e navegou pelo protótipo.</p>
+      </div>
+      <ol class="steps" style="list-style:none; margin:0; padding:0;">
+        <li class="step">
+          <div class="head"><span class="n">01</span><span class="time tnum">~10 min</span></div>
+          <h3>Leia a Especificação</h3>
+          <p>Entenda a arquitetura, a correspondência entre camadas e telas, e o exemplo que serve de roteiro para a navegação.</p>
+        </li>
+        <li class="step">
+          <div class="head"><span class="n">02</span><span class="time tnum">10 a 15 min</span></div>
+          <h3>Navegue pelo protótipo</h3>
+          <p>Entre com as credenciais acima e siga o ciclo pela barra lateral, da Coleção de Dados à Recalibração.</p>
+        </li>
+        <li class="step">
+          <div class="head"><span class="n">03</span><span class="time tnum">15 a 20 min</span></div>
+          <h3>Responda ao questionário</h3>
+          <p>Registre sua percepção sobre o artefato com base na sua experiência profissional ou acadêmica.</p>
+        </li>
+      </ol>
+      <p class="total"><span class="label">Tempo total estimado</span><strong class="tnum">35 a 45 minutos</strong></p>
+
+      <div class="card route-map">
+        <span class="label">Roteiro sugerido no protótipo</span>
+        <ol>
+          <li><span class="stop"><b>0</b>Login</span></li>
+          <li><span class="stop"><b>1</b>Overview</span></li>
+          <li><span class="stop"><b>2</b>Coleção de Dados</span></li>
+          <li><span class="stop"><b>3</b>Inteligência · Sensing</span></li>
+          <li><span class="stop"><b>4</b>Inteligência · Seizing</span></li>
+          <li><span class="stop"><b>5</b>Execuções de GTM</span></li>
+          <li><span class="stop"><b>6</b>Recalibração</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <span class="label">Questionário</span>
+          <h2>Pronto para registrar sua avaliação?</h2>
+          <p>As respostas são anônimas, tratadas de forma agregada e usadas exclusivamente para fins acadêmicos. Você pode interromper a participação a qualquer momento, sem prejuízo.</p>
+        </div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder questionário
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </div>
+
+      <div class="facts">
+        <div>
+          <span class="label">Dúvidas</span>
+          <p>Fale com o pesquisador pelo e-mail <code id="contact-mail">g.toledocosta@uni9.edu.br</code> <button class="copy" type="button" data-copy="contact-mail">Copiar</button></p>
+        </div>
+        <div>
+          <span class="label">Resultados</span>
+          <p>Ao final do questionário, você pode pedir um resumo dos resultados da pesquisa.</p>
+        </div>
+        <div>
+          <span class="label">Contribuições</span>
+          <p>Sugestões e melhorias propostas serão sistematizadas como recomendações para trabalhos futuros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>Versão preliminar do Framework GTM Adaptativo. Material destinado exclusivamente à avaliação por especialistas.</span>
+    <span>PPGI · Universidade Nove de Julho · 2026</span>
+  </div>
+</footer>
+
+<script src="assets/kit.js"></script>
+</body>
+</html>

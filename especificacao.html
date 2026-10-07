@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+  Curioso o suficiente para abrir o código-fonte?
+  Este kit avalia um protótipo acadêmico.
+  A versão comercial, em produção, está em https://strataflow.co
+-->
+<title>Especificação · Framework GTM Adaptativo</title>
+<meta name="description" content="Especificação do Framework GTM Adaptativo para avaliação por especialistas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/kit.css">
+</head>
+<body>
+<div class="doc-layout">
+
+<aside class="sidebar" aria-label="Sumário">
+  <div class="top-row">
+    <a class="brand" href="index.html"><span>Framework GTM Adaptativo</span><span class="label">Especificação</span></a>
+    <button class="btn toc-toggle" type="button" aria-expanded="false" aria-controls="toc">Sumário</button>
+  </div>
+  <nav id="toc">
+    <ol>
+      <li><a href="#apresentacao"><span class="n">01</span>Apresentação</a></li>
+      <li><a href="#escopo"><span class="n">02</span>Finalidade, escopo e limites</a></li>
+      <li><a href="#modelo"><span class="n">03</span>Modelo teórico conceitual</a></li>
+      <li><a href="#arquitetura"><span class="n">04</span>Arquitetura em seis camadas</a></li>
+      <li><a href="#ponte"><span class="n">05</span>Do framework ao protótipo</a></li>
+      <li><a href="#telas"><span class="n">06</span>Telas e funcionalidades</a></li>
+      <li><a href="#papeis"><span class="n">07</span>Papéis e direitos de decisão</a></li>
+      <li><a href="#dimensoes"><span class="n">08</span>Dimensões transversais</a></li>
+      <li><a href="#fluxo"><span class="n">09</span>Fluxo de operação</a></li>
+      <li><a href="#registros"><span class="n">10</span>Registros previstos</a></li>
+      <li><a href="#exemplo"><span class="n">11</span>Exemplo: o caso Campo Aberto</a></li>
+      <li><a href="#avaliacao"><span class="n">12</span>Como o artefato será avaliado</a></li>
+      <li><a href="#glossario"><span class="n">13</span>Glossário</a></li>
+    </ol>
+  </nav>
+  <div class="side-actions">
+    <a class="btn btn-dark" href="https://gtm-framework.vercel.app/login" target="_blank" rel="noopener">Abrir o protótipo</a>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder questionário</a>
+  </div>
+</aside>
+
+<main class="doc">
+  <div class="wrap">
+
+    <header class="doc-head">
+      <a class="label" href="index.html" style="text-decoration:none;">← Kit de avaliação</a>
+      <h1>Especificação do Framework GTM Adaptativo</h1>
+      <p class="lead">Componentes, relações internas e limites do framework, e a forma como cada um aparece no protótipo que você vai avaliar.</p>
+      <div class="credits" style="margin-top: 4px;">
+        <div><span class="label">Autor</span><strong>Guilherme de Toledo Costa</strong></div>
+        <div><span class="label">Orientador</span><strong>Prof. Dr. Marcos Antonio Gaspar</strong></div>
+        <div><span class="label">Situação</span><strong>Versão para avaliação por especialistas</strong></div>
+      </div>
+    </header>
+
+    <!-- 01 -->
+    <section id="apresentacao">
+      <h2><span class="n">01</span>Apresentação</h2>
+      <div class="prose">
+        <p>O <strong>Framework GTM Adaptativo</strong> organiza a formulação e a execução de estratégias de Go-to-Market (GTM) em empresas de tecnologia. Ele integra Inteligência Competitiva (IC) baseada em dados, Inteligência Artificial (IA) e as funções de Marketing, Vendas, Pós-Vendas e Produto em um único ciclo de decisão e aprendizado.</p>
+        <p>O artefato tem dois níveis. A <strong>arquitetura conceitual</strong> descreve o framework em seis camadas. A <strong>instanciação</strong> é um protótipo navegável (dashboard) que materializa essas camadas com dados fictícios. O protótipo é o objeto central desta avaliação.</p>
+        <p>O kit reúne três materiais: esta Especificação, o acesso ao protótipo e o questionário. Leia esta página antes de navegar, porque ela indica onde cada componente do framework aparece nas telas.</p>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section id="escopo">
+      <h2><span class="n">02</span>Finalidade, escopo e limites</h2>
+      <div class="prose">
+        <p>A arquitetura abrange os níveis estratégico, tático e operacional de uma organização de tecnologia. O protótipo demonstra o fluxo completo do framework instanciado, da coleta de dados à recalibração.</p>
+      </div>
+      <div class="grid-2">
+        <div class="box">
+          <h4>O protótipo implementa</h4>
+          <ul>
+            <li>Visão integrada das camadas em um fluxo contínuo</li>
+            <li>Painel de KPIs compartilhado entre as funções de GTM</li>
+            <li>Registro e acompanhamento de sinais e recomendações analíticas</li>
+            <li>Ações coordenadas com responsáveis, prazos e tarefas</li>
+            <li>Registro de hipóteses, aprendizados e feedbacks para recalibrar o ciclo</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>O framework não define</h4>
+          <ul>
+            <li>Organograma, cargos obrigatórios ou tamanho de equipe</li>
+            <li>Modelos analíticos definitivos ou algoritmos proprietários</li>
+            <li>Indicadores de GTM universais ou padronizados entre setores</li>
+            <li>Roteiro de implantação para uma organização específica</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notice" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p><strong>O que esta avaliação cobre.</strong> Clareza, coerência interna, utilidade potencial e adaptabilidade do artefato. Ela não envolve implantação em uma organização nem a comprovação de efeitos sobre resultados de GTM.</p>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="modelo">
+      <h2><span class="n">03</span>Modelo teórico conceitual</h2>
+      <div class="prose">
+        <p>O modelo teórico reúne os construtos que a revisão sistemática da literatura encontrou isolados: Conhecimentos e Dados, Inteligência Competitiva, Estratégias de GTM, Decisão Adaptativa, Execução Estratégica, Inteligência Artificial e Integração Interfuncional. O ciclo central representa o ajuste contínuo da estratégia com base em novos dados.</p>
+      </div>
+      <div class="card" style="padding: 16px;">
+<figure class="model" aria-labelledby="model-cap-spec">
+  <div class="model-svg">
+    <svg viewBox="0 0 1100 520" role="img" aria-label="Modelo teórico conceitual do Framework GTM Adaptativo: Inteligência Artificial sobre um ciclo entre Conhecimentos e Dados, Decisão Adaptativa e Execução Estratégica, alimentado por Inteligência Competitiva e Estratégias de GTM, e conectado à Integração Interfuncional entre Marketing, Comercial, Pós-Vendas e Produto.">
+      <defs>
+        <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".9" fill="#E4E4E7"/></pattern>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#18181B"/></marker>
+        <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"><circle cx="5" cy="5" r="4" fill="#18181B"/></marker>
+      </defs>
+      <rect x="6" y="6" width="1088" height="508" rx="10" fill="#FFFFFF" stroke="#E4E4E7"/>
+      <rect x="20" y="20" width="806" height="480" rx="8" fill="url(#dots)" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+
+      <!-- Inteligência Artificial -->
+      <rect x="168" y="38" width="520" height="66" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.4"/>
+      <text x="428" y="66" text-anchor="middle" class="t-title">Inteligência Artificial</text>
+      <text x="428" y="88" text-anchor="middle" class="t-desc">Automação e análise preditiva para antecipar tendências e otimizar processos</text>
+
+      <rect x="36" y="122" width="774" height="362" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+
+      <!-- grupo esquerdo -->
+      <rect x="54" y="152" width="216" height="304" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+      <rect x="70" y="168" width="184" height="128" rx="8" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.4"/>
+      <text x="162" y="198" text-anchor="middle" class="t-title">Inteligência</text>
+      <text x="162" y="219" text-anchor="middle" class="t-title">Competitiva</text>
+      <text x="162" y="244" text-anchor="middle" class="t-desc">Coleta e análise rigorosa</text>
+      <text x="162" y="261" text-anchor="middle" class="t-desc">de informações de mercado</text>
+      <text x="162" y="278" text-anchor="middle" class="t-desc">para embasar decisões</text>
+      <rect x="70" y="312" width="184" height="128" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="162" y="346" text-anchor="middle" class="t-title">Estratégias de GTM</text>
+      <text x="162" y="372" text-anchor="middle" class="t-desc">Plano de ação para a</text>
+      <text x="162" y="389" text-anchor="middle" class="t-desc">execução e ajuste constante</text>
+      <text x="162" y="406" text-anchor="middle" class="t-desc">de presença de mercado</text>
+
+      <!-- ciclo -->
+      <rect x="326" y="258" width="232" height="86" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.6"/>
+      <text x="442" y="290" text-anchor="middle" class="t-title">Conhecimentos &amp; Dados</text>
+      <text x="442" y="312" text-anchor="middle" class="t-desc">Ponto de partida que alimenta</text>
+      <text x="442" y="329" text-anchor="middle" class="t-desc">o ciclo com informações acionáveis</text>
+
+      <rect x="592" y="140" width="202" height="98" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="693" y="170" text-anchor="middle" class="t-title">Decisão Adaptativa</text>
+      <text x="693" y="194" text-anchor="middle" class="t-desc">Ajuste rápido de rota com</text>
+      <text x="693" y="211" text-anchor="middle" class="t-desc">base em resultados e</text>
+      <text x="693" y="228" text-anchor="middle" class="t-desc">novos dados</text>
+
+      <rect x="592" y="368" width="202" height="98" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/>
+      <text x="693" y="398" text-anchor="middle" class="t-title">Execução Estratégica</text>
+      <text x="693" y="422" text-anchor="middle" class="t-desc">Implementação tática das</text>
+      <text x="693" y="439" text-anchor="middle" class="t-desc">estratégias baseadas nos</text>
+      <text x="693" y="456" text-anchor="middle" class="t-desc">dados coletados</text>
+
+      <path d="M272 300 H322" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#ah)" marker-end="url(#ah)"/>
+      <path d="M408 254 C 420 180, 500 162, 588 178" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+      <path d="M740 244 C 772 290, 772 318, 742 362" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+      <path d="M588 440 C 500 470, 420 440, 410 348" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#dot)" marker-end="url(#ah)"/>
+
+      <!-- título e integração -->
+      <text x="962" y="48" text-anchor="middle" class="t-brand-s">FRAMEWORK</text>
+      <text x="962" y="88" text-anchor="middle" class="t-brand">GTM</text>
+      <text x="962" y="112" text-anchor="middle" class="t-brand-s">ADAPTATIVO</text>
+      <rect x="846" y="122" width="232" height="378" rx="8" fill="none" stroke="#A1A1AA" stroke-dasharray="5 5"/>
+      <text x="962" y="154" text-anchor="middle" class="t-title">Integração Interfuncional</text>
+      <text x="962" y="176" text-anchor="middle" class="t-desc">Sinergia entre áreas e</text>
+      <text x="962" y="193" text-anchor="middle" class="t-desc">quebra de silos</text>
+      <g class="fn">
+        <rect x="866" y="212" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="246" text-anchor="middle" class="t-title">Marketing</text>
+        <rect x="866" y="282" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="316" text-anchor="middle" class="t-title">Comercial</text>
+        <rect x="866" y="352" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="386" text-anchor="middle" class="t-title">Pós-Vendas</text>
+        <rect x="866" y="422" width="192" height="58" rx="8" fill="#FFFFFF" stroke="#18181B" stroke-width="1.2"/><text x="962" y="456" text-anchor="middle" class="t-title">Produto</text>
+      </g>
+      <path d="M798 432 H830 V300 H842" fill="none" stroke="#18181B" stroke-width="1.4" marker-start="url(#ah)" marker-end="url(#ah)"/>
+    </svg>
+  </div>
+
+  <div class="model-stack" >
+    <div class="m-box m-ia"><strong>Inteligência Artificial</strong><span>Automação e análise preditiva para antecipar tendências e otimizar processos</span></div>
+    <div class="m-group">
+      <div class="m-box m-ic"><strong>Inteligência Competitiva</strong><span>Coleta e análise rigorosa de informações de mercado para embasar decisões</span></div>
+      <div class="m-box"><strong>Estratégias de GTM</strong><span>Plano de ação para a execução e ajuste constante de presença de mercado</span></div>
+    </div>
+    <div class="m-arrow">↕</div>
+    <div class="m-cycle">
+      <span class="label">Ciclo adaptativo</span>
+      <div class="m-box m-core"><strong>Conhecimentos &amp; Dados</strong><span>Ponto de partida que alimenta o ciclo com informações acionáveis</span></div>
+      <div class="m-arrow">↓</div>
+      <div class="m-box"><strong>Decisão Adaptativa</strong><span>Ajuste rápido de rota com base em resultados e novos dados</span></div>
+      <div class="m-arrow">↓</div>
+      <div class="m-box"><strong>Execução Estratégica</strong><span>Implementação tática das estratégias baseadas nos dados coletados</span></div>
+      <div class="m-arrow">↺ retorna a Conhecimentos &amp; Dados</div>
+    </div>
+    <div class="m-arrow">↕</div>
+    <div class="m-group">
+      <span class="label">Integração Interfuncional</span>
+      <div class="m-fns"><span>Marketing</span><span>Comercial</span><span>Pós-Vendas</span><span>Produto</span></div>
+    </div>
+  </div>
+  <figcaption id="model-cap-spec">Modelo teórico conceitual do Framework GTM Adaptativo (Figura 2 da dissertação). Fonte: elaborado pelo autor.</figcaption>
+</figure>
+
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="arquitetura">
+      <h2><span class="n">04</span>Arquitetura em seis camadas</h2>
+      <div class="prose">
+        <p>A arquitetura transforma o modelo teórico em seis camadas interdependentes. Os dados sobem da Camada 1 até a ação estratégica. As decisões descem e orientam o que deve ser coletado. Um laço de retroalimentação conecta a Camada 6 à Camada 1 e reinicia o ciclo.</p>
+      </div>
+      <figure class="figure" style="margin:0;">
+        <div class="arch-static">
+          <ol>
+            <li><span class="num">1</span><div><h4>Coleção de Dados e Governança</h4><p>Gestão e fundação dos dados brutos de CRM, ERP, data lakes e bases estruturadas, sob glossário comum.</p></div><span class="cap cap-sensing">Sensing</span></li>
+            <li><span class="num">2</span><div><h4>Inteligência Competitiva baseada em Dados</h4><p>Transformação dos dados em análise de mercado e monitoramento da concorrência.</p></div><span class="cap cap-sensing">Sensing</span></li>
+            <li><span class="num">3</span><div><h4>Capacidades Analíticas e Inteligência Artificial</h4><p>Modelos preditivos, prescritivos e de linguagem natural que geram recomendações.</p></div><span class="cap cap-seizing">Seizing</span></li>
+            <li><span class="num">4</span><div><h4>Decisão Estratégica de GTM</h4><p>Definição de segmentação, posicionamento, precificação e canais.</p></div><span class="cap cap-seizing">Seizing</span></li>
+            <li><span class="num">5</span><div><h4>Execução Interfuncional</h4><p>Operacionalização coordenada entre Marketing, Vendas, Pós-Vendas e Produto.</p></div><span class="cap cap-reconf">Reconfiguring</span></li>
+            <li><span class="num">6</span><div><h4>Feedback, Aprendizado e Recalibração</h4><p>Fechamento do ciclo por KPIs, revisão de hipóteses e gestão do conhecimento.</p></div><span class="cap cap-reconf">Reconfiguring</span></li>
+          </ol>
+          <div class="arch-loop" aria-hidden="true"><span>Retroalimentação 6 → 1</span></div>
+        </div>
+        <figcaption>Arquitetura do Framework GTM Adaptativo (Figura 3 da dissertação), com as capacidades dinâmicas de Teece (2007; 2018) associadas a cada par de camadas.</figcaption>
+      </figure>
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th scope="col">Capacidade dinâmica</th><th scope="col">Camadas</th><th scope="col">Papel no ciclo</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span class="cap cap-sensing">Sensing</span></th><td>1 e 2</td><td>Detectar oportunidades e ameaças no ambiente competitivo</td></tr>
+            <tr><th scope="row"><span class="cap cap-seizing">Seizing</span></th><td>3 e 4</td><td>Mobilizar recursos analíticos para decidir e agir</td></tr>
+            <tr><th scope="row"><span class="cap cap-reconf">Reconfiguring</span></th><td>5 e 6</td><td>Ajustar estruturas, processos e prioridades com base no aprendizado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section id="ponte">
+      <h2><span class="n">05</span>Do framework ao protótipo</h2>
+      <div class="prose">
+        <p>O protótipo opera as seis camadas conceituais em cinco camadas de instanciação. A Decisão Estratégica e a Execução Interfuncional compartilham o mesmo painel e os mesmos indicadores, o que permite demonstrar a coordenação entre as funções sem duplicar telas. O quadro abaixo mostra onde encontrar cada camada.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="tbl tbl-wide">
+          <thead><tr><th scope="col">Camada da arquitetura</th><th scope="col">Camada da instanciação</th><th scope="col">Módulo no protótipo</th><th scope="col">Telas e opções</th><th scope="col">Capacidade</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1. Coleção de Dados e Governança</th><td>1. Coleta de dados</td><td>Coleção de Dados</td><td>Informações da empresa (dados, canais, Matriz SWOT); Catálogo de GTM (Métricas &amp; KPIs, Objetivos &amp; Metas, Hipóteses, Riscos &amp; Contexto); Data Lake</td><td><span class="cap cap-sensing">Sensing</span></td></tr>
+            <tr><th scope="row">2. IC baseada em Dados</th><td>2. Inteligência Competitiva</td><td>Inteligência · Sensing</td><td>Mercado; Concorrência</td><td><span class="cap cap-sensing">Sensing</span></td></tr>
+            <tr><th scope="row">3. Capacidades Analíticas e IA</th><td>3. IA/Analítica</td><td>Inteligência · Seizing</td><td>Sugestões da IA; GTM Agent</td><td><span class="cap cap-seizing">Seizing</span></td></tr>
+            <tr><th scope="row">4. Decisão Estratégica de GTM</th><td>4. Decisão</td><td>Overview e Catálogo de GTM</td><td>Metas &amp; KPIs; Objetivos &amp; Metas; Hipóteses, Riscos &amp; Contexto; Recomendações de IA</td><td><span class="cap cap-seizing">Seizing</span></td></tr>
+            <tr><th scope="row">5. Execução Interfuncional</th><td>4. Decisão (consolidada)</td><td>Execuções de GTM · Execução</td><td>Ações Coordenadas</td><td><span class="cap cap-reconf">Reconfiguring</span></td></tr>
+            <tr><th scope="row">6. Feedback, Aprendizado e Recalibração</th><td>5. Aprendizado</td><td>Execuções de GTM · Integração; Recalibração</td><td>Metas e KPIs; Aprendizados; Feedbacks</td><td><span class="cap cap-reconf">Reconfiguring</span></td></tr>
+            <tr><th scope="row">Laço de retroalimentação (6 → 1)</th><td>Reinício do ciclo</td><td>Overview</td><td>Entrada do ciclo</td><td class="mono">Ciclo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 13px; color: var(--fg-3);">Baseado nos Quadros 20 e 21 da dissertação.</p>
+    </section>
+
+    <!-- 06 -->
+    <section id="telas">
+      <h2><span class="n">06</span>Telas e funcionalidades do protótipo</h2>
+      <div class="prose">
+        <p>O protótipo começa por uma tela de login e se organiza em torno do Overview, que resume o estado do ciclo. A barra lateral leva às demais áreas na ordem do ciclo.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="tbl tbl-wide">
+          <thead><tr><th scope="col">Área</th><th scope="col">O que o avaliador encontra</th><th scope="col">Endereço</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Overview</th><td>Sinais ativos, recomendações pendentes e metas em risco; status geral das iniciativas; KPIs com baseline e meta; atalhos para sinais, recomendações e ações.</td><td class="mono">/poc</td></tr>
+            <tr><th scope="row">Coleção de Dados</th><td>Dados da empresa e do posicionamento, canais de aquisição, Matriz SWOT, catálogo de KPIs, metas, hipóteses e riscos, e o Data Lake.</td><td class="mono">/poc/dados</td></tr>
+            <tr><th scope="row">Inteligência · Sensing</th><td>Sinais de mercado e de concorrência com status, importância, confiança, origem e o KPI ou ação a que se vinculam.</td><td class="mono">/poc/sinais</td></tr>
+            <tr><th scope="row">Inteligência · Seizing</th><td>Recomendações da IA com score, confiança, impacto e justificativa; fila de pendentes, em revisão, aplicadas e histórico; conversa com o GTM Agent.</td><td class="mono">/poc/sinais?sub=decisoes</td></tr>
+            <tr><th scope="row">Execuções de GTM</th><td>Ações coordenadas com categoria, responsável, área, prazo e tarefas; em Metas e KPIs, saúde do projeto, funil, impacto em contas e canais.</td><td class="mono">/poc/recomendacoes</td></tr>
+            <tr><th scope="row">Recalibração</th><td>Aprendizados e feedbacks registrados, com origem, responsável e reutilização em outros ciclos.</td><td class="mono">/poc/feedback</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Funcionalidades que atravessam as telas</h3>
+      <div class="grid-2">
+        <div class="box"><h4>Painel de KPIs transversais</h4><p>Indicadores compartilhados entre Marketing, Vendas, Pós-Vendas e Produto, com baseline, meta e variação. Aparece no Overview e em Execuções de GTM · Metas e KPIs.</p></div>
+        <div class="box"><h4>Trilha de decisão</h4><p>Cada recomendação passa por pendente, em revisão, aplicada ou rejeitada, com responsável e data. Aparece em Inteligência · Seizing.</p></div>
+        <div class="box"><h4>Sinalização de sinais fracos</h4><p>Sinais classificados por importância e confiança, com fila de revisão humana. Aparece em Inteligência · Sensing.</p></div>
+        <div class="box"><h4>Registro de recomendações</h4><p>Score, confiança, impacto e os sinais que sustentam cada recomendação. Aparece em Inteligência · Seizing.</p></div>
+        <div class="box"><h4>Revisão de hipóteses</h4><p>Hipóteses e riscos do programa no Catálogo de GTM; resultados e aprendizados que as confirmam ou revisam em Recalibração.</p></div>
+        <div class="box"><h4>Ações coordenadas</h4><p>Desdobramento da decisão em ações por função, com prazos, tarefas e bloqueios. Aparece em Execuções de GTM.</p></div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="papeis">
+      <h2><span class="n">07</span>Papéis e direitos de decisão</h2>
+      <div class="prose">
+        <p>O framework pressupõe funções articuladoras, sem definir cargos ou hierarquias. Os nomes abaixo indicam responsabilidades e podem variar de uma empresa para outra.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="tbl tbl-wide">
+          <thead><tr><th scope="col">Função</th><th scope="col">Responsabilidade</th><th scope="col">Decide sobre</th><th scope="col">Não decide sobre</th><th scope="col">Camadas · nível</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Comitê ou liderança de GTM</th><td>Aprovar prioridades e decidir segmento, canal, preço e posicionamento</td><td>Decisões de GTM; prioridades; conflitos entre funções</td><td>Execução direta de coleta, inteligência ou analítica</td><td class="mono">C4 · estratégico e tático</td></tr>
+            <tr><th scope="row">Gestor de dados (data steward)</th><td>Qualidade, governança e glossário comum dos dados</td><td>Glossário, padrões e qualidade dos dados</td><td>Estratégia de GTM e alocação de recursos</td><td class="mono">C1 e C2 · tático e operacional</td></tr>
+            <tr><th scope="row">Analista de Inteligência Competitiva</th><td>Transformar sinais e dados em inteligência acionável</td><td>Fontes, enriquecimento e validação da inteligência</td><td>Estratégia de GTM e prioridades de negócio</td><td class="mono">C2 · tático</td></tr>
+            <tr><th scope="row">Cientista ou analista de dados</th><td>Operar modelos preditivos e analíticos</td><td>Modelos, parâmetros e variáveis; limitações dos modelos</td><td>Execução de GTM e prioridades estratégicas</td><td class="mono">C3 · tático e operacional</td></tr>
+            <tr><th scope="row">Marketing, Vendas, Pós-Vendas e Produto</th><td>Executar as decisões e registrar resultados e feedbacks</td><td>Execução das ações sob sua responsabilidade</td><td>Prioridades estratégicas e decisões interfuncionais</td><td class="mono">C5 · operacional</td></tr>
+            <tr><th scope="row">Aprendizado organizacional</th><td>Registrar resultados, revisar hipóteses e recalibrar o ciclo</td><td>Hipóteses revisadas, aprendizados e ajustes de parâmetros</td><td>Execução de GTM e prioridades estratégicas</td><td class="mono">C6 · tático</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 08 -->
+    <section id="dimensoes">
+      <h2><span class="n">08</span>Dimensões transversais</h2>
+      <div class="prose">
+        <p>Cinco dimensões atravessam as camadas e garantem coerência entre o que o framework propõe e o que o protótipo executa.</p>
+      </div>
+      <div class="grid-2">
+        <div class="box"><h4>Governança de dados</h4><p>Glossário comum, qualidade, rastreabilidade e padrões compartilhados. Principal nas Camadas 1 e 2. No protótipo: Coleção de Dados, Catálogo de GTM e Data Lake.</p></div>
+        <div class="box"><h4>Integração interfuncional</h4><p>KPIs e decisões compartilhados entre as quatro funções. Principal nas Camadas 4 e 5. No protótipo: painel de KPIs e Ações Coordenadas.</p></div>
+        <div class="box"><h4>Orientação por dados</h4><p>Decisões com critérios, evidências e recomendações registrados. Presente em todas as camadas. No protótipo: trilha de decisão e registro de recomendações.</p></div>
+        <div class="box"><h4>Adaptabilidade</h4><p>Ajuste a contextos, setores e maturidades de dados. Principal na Camada 6. No protótipo: catálogo configurável de KPIs, metas e hipóteses, e a recalibração do ciclo.</p></div>
+        <div class="box"><h4>Aprendizado contínuo</h4><p>Revisão de hipóteses e realimentação do ciclo com resultados e feedbacks. Principal na Camada 6. No protótipo: Recalibração · Aprendizados e Feedbacks.</p></div>
+      </div>
+      <div class="scroll-x">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:left;">Dimensão</th>
+              <th scope="col">C1<span>Dados</span></th>
+              <th scope="col">C2<span>IC</span></th>
+              <th scope="col">C3<span>IA</span></th>
+              <th scope="col">C4<span>Decisão</span></th>
+              <th scope="col">C5<span>Execução</span></th>
+              <th scope="col">C6<span>Aprendizado</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Governança de dados<small>Glossário comum, qualidade e rastreabilidade</small></th>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Integração interfuncional<small>KPIs e decisões compartilhados entre as quatro funções</small></th>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Orientação por dados<small>Decisões com critérios, evidências e recomendações registrados</small></th>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Adaptabilidade<small>Ajuste a contextos, setores e maturidades de dados</small></th>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell trans" title="Atuação transversal"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Aprendizado contínuo<small>Revisão de hipóteses e realimentação do ciclo</small></th>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell none" title="Sem atuação direta"></span></td>
+              <td><span class="cell main" title="Aplicação principal"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matrix-legend">
+        <span><span class="cell main"></span>Aplicação principal</span>
+        <span><span class="cell trans"></span>Atuação transversal</span>
+        <span><span class="cell none"></span>Sem atuação direta</span>
+      </div>
+
+    </section>
+
+    <!-- 09 -->
+    <section id="fluxo">
+      <h2><span class="n">09</span>Fluxo de operação</h2>
+      <div class="prose">
+        <p>O percurso abaixo segue a sequência de navegação do protótipo. O fluxo admite retornos: uma análise pode pedir novos dados, uma decisão pode ser revista e a execução pode revelar novos sinais.</p>
+      </div>
+      <ol class="flow">
+        <li><span class="n">C1</span><div class="body"><h4>Coleta de dados</h4><p>Consultar fontes, glossário, KPIs, metas e hipóteses do programa.</p><div class="where"><span class="label">Registro</span>Base integrada e governada</div></div></li>
+        <li><span class="n">C2</span><div class="body"><h4>Inteligência Competitiva</h4><p>Analisar sinais de mercado e concorrência, com confiança e impacto.</p><div class="where"><span class="label">Registro</span>Sinais validados e contextualizados</div></div></li>
+        <li><span class="n">C3</span><div class="body"><h4>IA e analítica</h4><p>Examinar recomendações, scores e justificativas; mover para revisão, adiar ou rejeitar.</p><div class="where"><span class="label">Registro</span>Recomendações emitidas e rastreadas</div></div></li>
+        <li><span class="n">C4</span><div class="body"><h4>Decisão</h4><p>Ler os KPIs transversais e registrar a decisão de GTM com critérios e responsáveis.</p><div class="where"><span class="label">Registro</span>Decisão com critérios e responsáveis</div></div></li>
+        <li><span class="n">C5</span><div class="body"><h4>Execução</h4><p>Desdobrar a decisão em ações coordenadas entre as funções, com prazos e tarefas.</p><div class="where"><span class="label">Registro</span>Plano de execução</div></div></li>
+        <li><span class="n">C6</span><div class="body"><h4>Aprendizado e recalibração</h4><p>Comparar resultados com as metas, revisar hipóteses, registrar aprendizados e iniciar novo ciclo.</p><div class="where"><span class="label">Registro</span>Hipóteses revisadas e aprendizados</div></div></li>
+      </ol>
+    </section>
+
+    <!-- 10 -->
+    <section id="registros">
+      <h2><span class="n">10</span>Registros previstos</h2>
+      <div class="prose">
+        <p>Os registros tornam observáveis as decisões e quem responde por elas. O protótipo define o conteúdo mínimo de cada um. O nível de detalhe acompanha a criticidade da decisão.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="tbl tbl-wide">
+          <thead><tr><th scope="col">Registro</th><th scope="col">Conteúdo mínimo</th><th scope="col">Finalidade</th><th scope="col">Onde aparece</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Sinais detectados</th><td>Fonte, data, impacto, evidências e responsável</td><td>Rastrear o sensing e identificar padrões ao longo do tempo</td><td>Inteligência · Sensing</td></tr>
+            <tr><th scope="row">Inteligência estruturada</th><td>Sinais normalizados, fontes, contexto e validação</td><td>Reduzir divergências de interpretação entre as funções</td><td>Inteligência · Sensing</td></tr>
+            <tr><th scope="row">Recomendações analíticas</th><td>Recomendação, score, confiança, sinais de base e responsável</td><td>Rastrear de onde vem cada recomendação</td><td>Inteligência · Seizing</td></tr>
+            <tr><th scope="row">Decisão de GTM</th><td>Instância, alternativas, critérios, decisão e justificativa</td><td>Registrar quem decidiu, como e com quais critérios</td><td>Seizing e Overview</td></tr>
+            <tr><th scope="row">Plano de execução</th><td>Ações, responsáveis, prazos, situação e tarefas</td><td>Acompanhar a execução das ações definidas</td><td>Execuções de GTM</td></tr>
+            <tr><th scope="row">Aprendizado</th><td>Hipótese original, resultado observado, revisão e origem</td><td>Realimentar o ciclo e reutilizar o conhecimento</td><td>Recalibração</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="exemplo">
+      <h2><span class="n">11</span>Exemplo: o caso Campo Aberto</h2>
+      <div class="prose">
+        <p>Este é o caso carregado no protótipo. Use-o como roteiro: cada etapa indica a tela onde você encontra o que está descrito. Empresa, contas, pessoas e números são fictícios.</p>
+      </div>
+      <div class="box" style="gap: 10px;">
+        <span class="label">Contexto</span>
+        <p style="color: var(--fg-2); font-size: 14px;">A ERP Company, empresa de software de gestão, quer expandir a venda de Techfin (serviços financeiros embarcados, como antecipação de recebíveis) entre cooperativas do agronegócio. A meta anual de New ARR da frente é de R$ 1,6 milhão e a meta de churn de receita é ficar abaixo de 5%. A Cooperativa Campo Aberto, principal conta da frente, está em janela de renovação.</p>
+      </div>
+      <ol class="flow">
+        <li><span class="n">C1</span><div class="body">
+          <h4>Coleção de Dados e Governança <span class="cap cap-sensing">Sensing</span></h4>
+          <p>Metas, KPIs, hipóteses e riscos do programa estão registrados no Catálogo de GTM. Dados de uso e de satisfação da Campo Aberto chegam pelo CRM.</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Coleção de Dados</span><span class="screen">Catálogo de GTM</span></div>
+          <div class="where"><span class="kpi">New ARR Techfin <b>R$ 120 mil</b> → meta R$ 1,6 mi</span><span class="kpi">Churn de receita <b>9,0%</b> → meta &lt; 5%</span></div>
+        </div></li>
+        <li><span class="n">C2</span><div class="body">
+          <h4>Inteligência Competitiva baseada em Dados <span class="cap cap-sensing">Sensing</span></h4>
+          <p>Três sinais apontam para a conta: uma concorrente cloud-native está oferecendo migração a cooperativas, o follow-up da Campo Aberto venceu sem resposta e o TI da cooperativa levantou riscos de integração. Um quarto sinal, a queda na taxa de renovação do agro, segue em revisão para separar efeito sazonal de pressão competitiva.</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Inteligência · Sensing</span></div>
+        </div></li>
+        <li><span class="n">C3</span><div class="body">
+          <h4>Capacidades Analíticas e IA <span class="cap cap-seizing">Seizing</span></h4>
+          <p>A IA cruza os sinais com a queda de uso e de NPS da conta e emite a recomendação "Risco de churn na Campo Aberto", com score 92 e confiança alta. Uma segunda recomendação sugere oferecer Techfin à cooperativa como alavanca de expansão (score 85).</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Inteligência · Seizing</span><span class="screen">Sugestões da IA</span></div>
+        </div></li>
+        <li><span class="n">C4</span><div class="body">
+          <h4>Decisão Estratégica de GTM <span class="cap cap-seizing">Seizing</span></h4>
+          <p>A decisão é reter a conta com proposta de valor em vez de competir por preço: um battlecard contra a concorrente e um plano técnico de migração para a nuvem. A oferta de Techfin fica condicionada à aprovação das condições de crédito pela alçada responsável.</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Overview</span><span class="screen">GTM Agent</span></div>
+        </div></li>
+        <li><span class="n">C5</span><div class="body">
+          <h4>Execução Interfuncional <span class="cap cap-reconf">Reconfiguring</span></h4>
+          <p>A decisão vira ações com dono e prazo em cada função: battlecard e kit de objeções (Product Marketing), aprovação das condições de Techfin (RevOps), segunda onda de cross-sell (Growth), revisão do playbook de renovação (Customer Success) e revisão contratual (Jurídico, bloqueada).</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Execuções de GTM</span><span class="screen">Ações Coordenadas</span></div>
+        </div></li>
+        <li><span class="n">C6</span><div class="body">
+          <h4>Feedback, Aprendizado e Recalibração <span class="cap cap-reconf">Reconfiguring</span></h4>
+          <p>Em 90 dias, o churn de receita cai, mas segue acima da meta, e o New ARR chega a cerca de 49% da meta anual. A análise da não renovação de outra cooperativa, a Vale do Sol, revisa a hipótese inicial: a perda tinha sido atribuída a preço, mas o fator decisivo foi a ausência do comitê de compra (TI, Financeiro e Operações) antes da proposta. O aprendizado é registrado, o sinal correspondente passa a validado e o playbook de renovação é revisado. Esse aprendizado volta à Camada 1 como critério para o próximo ciclo.</p>
+          <div class="where"><span class="label">Onde ver</span><span class="screen">Metas e KPIs</span><span class="screen">Recalibração · Aprendizados</span></div>
+          <div class="where"><span class="kpi">Churn de receita <b>7,2%</b> (−1,8 pp)</span><span class="kpi">NRR <b>104%</b> (+4 pp)</span><span class="kpi">New ARR <b>R$ 783 mil</b></span></div>
+        </div></li>
+      </ol>
+      <h3>As dimensões no exemplo</h3>
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th scope="col">Dimensão</th><th scope="col">Onde aparece no caso</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Governança de dados</th><td>KPIs, metas e hipóteses definidos no Catálogo de GTM e usados por todas as telas</td></tr>
+            <tr><th scope="row">Integração interfuncional</th><td>Ações de Product Marketing, RevOps, Growth, Customer Success e Jurídico derivadas de uma mesma decisão</td></tr>
+            <tr><th scope="row">Orientação por dados</th><td>Recomendação com score, confiança e os três sinais que a sustentam</td></tr>
+            <tr><th scope="row">Adaptabilidade</th><td>Revisão do playbook de renovação a partir do resultado</td></tr>
+            <tr><th scope="row">Aprendizado contínuo</th><td>Hipótese de preço revisada e aprendizado sobre o comitê de compra registrado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section id="avaliacao">
+      <h2><span class="n">12</span>Como o artefato será avaliado</h2>
+      <div class="prose">
+        <p>O questionário segue oito critérios de qualidade de artefatos da literatura de Design Science Research. Cada critério tem duas afirmativas em escala Likert de 5 pontos, de "discordo totalmente" a "concordo totalmente". Questões abertas e de síntese completam o instrumento.</p>
+      </div>
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th scope="col">Critério</th><th scope="col">O que se avalia</th><th scope="col">Referência</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Utilidade</th><td>Capacidade de apoiar decisões de GTM na prática</td><td class="mono">Hevner et al. (2004)</td></tr>
+            <tr><th scope="row">Completude</th><td>Cobertura dos componentes necessários: IC, IA e GTM</td><td class="mono">March; Smith (1995)</td></tr>
+            <tr><th scope="row">Consistência interna</th><td>Coerência lógica entre camadas e fluxos</td><td class="mono">vom Brocke et al. (2020)</td></tr>
+            <tr><th scope="row">Integração interfuncional</th><td>Articulação entre Marketing, Vendas, Pós-Vendas e Produto</td><td class="mono">Kahn (2005); Homburg et al. (2017)</td></tr>
+            <tr><th scope="row">Adaptabilidade</th><td>Suporte a ciclos de sensing, seizing e reconfiguring</td><td class="mono">Teece (2007; 2018)</td></tr>
+            <tr><th scope="row">Redução de incerteza</th><td>Contribuição percebida para decisões mais fundamentadas</td><td class="mono">Calof; Wright (2008)</td></tr>
+            <tr><th scope="row">Facilidade de compreensão</th><td>Clareza conceitual e comunicabilidade do artefato</td><td class="mono">Venable; Pries-Heje; Baskerville (2016)</td></tr>
+            <tr><th scope="row">Generalidade</th><td>Aplicabilidade a contextos análogos</td><td class="mono">Wieringa (2014)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose"><p>As sugestões dos especialistas serão sistematizadas como recomendações para trabalhos futuros.</p></div>
+      <div class="cta" style="margin-top: 8px;">
+        <div>
+          <span class="label">Próximo passo</span>
+          <h2>Navegou pelo protótipo?</h2>
+          <p>Registre sua avaliação no questionário. O preenchimento leva de 15 a 20 minutos.</p>
+        </div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder questionário</a>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section id="glossario">
+      <h2><span class="n">13</span>Glossário</h2>
+      <dl class="gloss">
+        <dt>Go-to-Market (GTM)</dt><dd>Conjunto de decisões e ações para levar uma oferta ao mercado: segmento, posicionamento, preço, canais e execução comercial.</dd>
+        <dt>Inteligência Competitiva (IC)</dt><dd>Processo sistemático de coleta e análise de informações sobre mercado e concorrentes para apoiar decisões.</dd>
+        <dt>Sensing</dt><dd>Capacidade de detectar oportunidades e ameaças no ambiente (Teece, 2007).</dd>
+        <dt>Seizing</dt><dd>Capacidade de mobilizar recursos para decidir e agir sobre o que foi detectado.</dd>
+        <dt>Reconfiguring</dt><dd>Capacidade de ajustar estruturas, processos e ativos a partir do aprendizado.</dd>
+        <dt>Sinal fraco</dt><dd>Indício inicial de mudança no ambiente, ainda incerto, que pode antecipar uma tendência.</dd>
+        <dt>KPI transversal</dt><dd>Indicador compartilhado entre funções, lido da mesma forma por Marketing, Vendas, Pós-Vendas e Produto.</dd>
+        <dt>New ARR</dt><dd>Receita recorrente anual nova, gerada por novos contratos ou expansão de contas.</dd>
+        <dt>NRR</dt><dd>Net Revenue Retention: receita retida da base de clientes, somando expansões e descontando perdas.</dd>
+        <dt>Churn de receita</dt><dd>Percentual da receita recorrente perdida por cancelamentos ou reduções de contrato.</dd>
+        <dt>Cross-sell</dt><dd>Venda de outro produto a um cliente que já usa a empresa.</dd>
+        <dt>Battlecard</dt><dd>Material de apoio a vendas com argumentos frente a um concorrente específico.</dd>
+        <dt>Playbook</dt><dd>Roteiro documentado de como executar uma rotina comercial, como renovação ou expansão.</dd>
+        <dt>Design Science Research</dt><dd>Método de pesquisa voltado à construção e avaliação de artefatos que resolvem problemas práticos.</dd>
+        <dt>Prova de conceito</dt><dd>Implementação parcial que demonstra a viabilidade de uma proposta, sem finalidade de produção.</dd>
+      </dl>
+      <nav class="pager" aria-label="Navegação entre páginas">
+        <a class="btn btn-secondary" href="index.html">← Voltar ao kit</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform" target="_blank" rel="noopener">Responder questionário</a>
+      </nav>
+    </section>
+
+  </div>
+</main>
+</div>
+<script src="assets/kit.js"></script>
+</body>
+</html>
