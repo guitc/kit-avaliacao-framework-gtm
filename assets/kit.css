@@ -90,7 +90,8 @@ p { margin: 0; }
 .topnav a { text-decoration: none; font-size: 13.5px; color: var(--fg-3); padding: 6px 10px; border-radius: 6px; }
 .topnav a:hover { color: var(--fg); background: var(--surface-2); }
 .topnav a[aria-current="page"] { color: var(--fg); font-weight: 500; }
-@media (max-width: 860px) { .topnav a.hide-sm { display: none; } }
+@media (max-width: 1040px) { .topnav a.hide-sm { display: none; } }
+@media (max-width: 760px) { .brand .label { display: none; } }
 @media (max-width: 560px) { .brand .label { display: none; } .topnav a:not(.btn) { display: none; } }
 
 /* ---------- botões (DS) ---------- */
@@ -412,3 +413,4 @@ p { margin: 0; }
 @media (max-width: 560px) { .arch-static { padding-right: 0; } .arch-loop { display: none; } .arch-static li { grid-template-columns: 36px minmax(0, 1fr); } .arch-static .num { width: 36px; height: 36px; } .arch-static .cap { grid-column: 2; justify-self: start; } .arch-static li + li::before { left: 35px; } .arch-static li + li::after { left: 31px; } }
 .flow .body h4 .cap { font-size: 11px; padding: 4px 8px; }
 .flow .kpi b { font-weight: 700; }
+@media (max-width: 380px) { .brand { font-size: 13.5px; } .topnav .btn { padding: 7px 10px; margin-left: 0; } .topbar .wrap { gap: 8px; } }
