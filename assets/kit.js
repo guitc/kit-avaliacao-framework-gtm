@@ -184,3 +184,121 @@
     });
   }
 })();
+
+/* ---------- v2: fluxo em 3 etapas ---------- */
+(function () {
+  'use strict';
+  var flow = document.getElementById('flow');
+  if (!flow) return;
+
+  // Questionário. Para registrar o consentimento, preencha PREFILL com os campos
+  // do link pré-preenchido do Google Forms, por exemplo:
+  // { 'entry.111111': 'Concordo em participar', 'entry.222222': 'Concordo em avaliar o Framework' }
+  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe-l0vCF2HoHj6uJk7mGG0qdoyNAl2FYrG4ups2S_jRmHgbUw/viewform';
+  var PREFILL = {};
+
+  var KEY = 'kitgtm.v2';
+  var s = { step: '1', p1: null, spec: false, proto: false, decl: false, p2: null };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved) for (var k in s) if (k in saved) s[k] = saved[k]; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
+
+  function $(id) { return document.getElementById(id); }
+  var steps = flow.querySelectorAll('.flow-step');
+  var marks = document.querySelectorAll('.stepper .st');
+
+  function formUrl(embedded) {
+    var q = [];
+    if (embedded) q.push('embedded=true');
+    q.push('usp=pp_url');
+    Object.keys(PREFILL).forEach(function (k) { q.push(encodeURIComponent(k) + '=' + encodeURIComponent(PREFILL[k])); });
+    return FORM + '?' + q.join('&');
+  }
+
+  function go(step, focus) {
+    s.step = String(step); save();
+    steps.forEach(function (sec) { sec.hidden = sec.getAttribute('data-step') !== s.step; });
+    var n = parseInt(s.step, 10);
+    marks.forEach(function (m) {
+      var i = parseInt(m.getAttribute('data-st'), 10);
+      m.classList.toggle('current', i === n);
+      m.classList.toggle('done', !isNaN(n) && i < n);
+      if (i === n) m.setAttribute('aria-current', 'step'); else m.removeAttribute('aria-current');
+    });
+    if (s.step === '3') {
+      var f = $('form-iframe');
+      if (!f.getAttribute('src')) f.setAttribute('src', formUrl(true));
+      $('form-newtab').href = formUrl(false);
+    }
+    if (focus) {
+      window.scrollTo(0, 0);
+      var h = flow.querySelector('.flow-step[data-step="' + s.step + '"] [tabindex="-1"]');
+      if (h) h.focus({ preventScroll: true });
+    }
+  }
+
+  // Etapa 1
+  var p1yes = $('p1-yes'), p1no = $('p1-no'), p1next = $('p1-next');
+  function syncP1() { p1next.disabled = !(p1yes.checked || p1no.checked); }
+  [p1yes, p1no].forEach(function (r) { r.addEventListener('change', function () { s.p1 = r.value; save(); syncP1(); }); });
+  p1next.addEventListener('click', function () { go(s.p1 === 'yes' ? '2' : 'end', true); });
+
+  // Etapa 2: Especificação na própria página, protótipo em nova aba
+  var p2group = $('p2-group'), p2yes = $('p2-yes'), p2no = $('p2-no'), goEval = $('go-eval'), decl = $('decl');
+  function syncP2() {
+    var stSpec = $('st-spec'), stProto = $('st-proto');
+    stSpec.textContent = s.spec ? 'Lida até o fim' : 'Leitura em andamento'; stSpec.classList.toggle('ok', s.spec);
+    stProto.textContent = s.proto ? 'Aberto' : 'Não aberto'; stProto.classList.toggle('ok', s.proto);
+    var unlocked = s.spec && s.proto;
+    decl.disabled = !unlocked;
+    if (!unlocked) decl.checked = false;
+    s.decl = decl.checked;
+    $('decl-label').classList.toggle('locked', !unlocked);
+    p2group.disabled = !s.decl;
+    if (!s.decl) { p2yes.checked = false; p2no.checked = false; s.p2 = null; }
+    $('lock-spec').classList.toggle('done', s.spec);
+    $('lock-proto').classList.toggle('done', s.proto);
+    $('lock-decl').classList.toggle('done', !!s.decl);
+    $('locks').hidden = !!(s.spec && s.proto && s.decl);
+    goEval.disabled = !(s.decl && (p2yes.checked || p2no.checked));
+    goEval.textContent = p2no.checked ? 'Encerrar participação' : 'Avaliação do Framework GTM Adaptativo';
+    save();
+  }
+  $('open-proto').addEventListener('click', function () { s.proto = true; syncP2(); });
+  decl.addEventListener('change', syncP2);
+  [p2yes, p2no].forEach(function (r) { r.addEventListener('change', function () { s.p2 = r.value; syncP2(); }); });
+  goEval.addEventListener('click', function () { go(s.p2 === 'yes' ? '3' : 'end', true); });
+
+  if ('IntersectionObserver' in window) {
+    var end = $('spec-end');
+    new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting && !s.spec && s.step === '2') { s.spec = true; syncP2(); } });
+    }, { threshold: 0 }).observe(end);
+    var tocLinks = document.querySelectorAll('.spec-toc a');
+    var byId = {};
+    tocLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var secObs = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        if (e.isIntersecting) { tocLinks.forEach(function (a) { a.classList.remove('active'); }); if (byId[e.target.id]) byId[e.target.id].classList.add('active'); }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    Object.keys(byId).forEach(function (id) { var el = $(id); if (el) secObs.observe(el); });
+  } else { s.spec = true; }
+
+  document.querySelectorAll('[data-goto]').forEach(function (b) {
+    b.addEventListener('click', function () { go(b.getAttribute('data-goto'), true); });
+  });
+  $('restart').addEventListener('click', function () {
+    s = { step: '1', p1: null, spec: false, proto: false, decl: false, p2: null }; save();
+    [p1yes, p1no, p2yes, p2no, decl].forEach(function (r) { r.checked = false; });
+    $('form-iframe').removeAttribute('src');
+    syncP1(); syncP2(); go('1', true);
+  });
+
+  // restaura o estado salvo
+  if (s.p1 === 'yes') p1yes.checked = true; else if (s.p1 === 'no') p1no.checked = true;
+  if (s.decl) decl.checked = true;
+  if (s.p2 === 'yes') p2yes.checked = true; else if (s.p2 === 'no') p2no.checked = true;
+  if (s.step === '3' && s.p2 !== 'yes') s.step = '2';
+  if (s.step === '2' && s.p1 !== 'yes') s.step = '1';
+  syncP1(); syncP2(); go(s.step, false);
+})();
